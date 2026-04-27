@@ -3,13 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Laravel Shop</title>
+    <title>Style Zone</title>
     <script src="https://cdn.tailwindcss.com"></script>
 </head>
 <body class="bg-gray-50 text-gray-800">
 
 <nav class="bg-white border-b px-6 py-3 flex items-center justify-between">
-    <a href="{{ route('home') }}" class="font-semibold text-lg">Laravel Shop</a>
+    <a href="{{ route('home') }}" class="font-semibold text-lg">Style Zone</a>
     <div class="flex items-center gap-4 text-sm">
         @auth
             <span class="text-gray-500">Hi, {{ auth()->user()->name }}</span>

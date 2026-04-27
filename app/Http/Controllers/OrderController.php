@@ -35,7 +35,7 @@ class OrderController extends Controller
 
         $order = Order::create([
             'user_id'=>auth()->id(),
-            'total'=>$total,
+            'total_amount'=>$total,
             'shipping_address'=>$request->shipping_address,
             'status'=>'pending',
         ]);

@@ -6,6 +6,7 @@ use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\CartController;
 use App\Http\Controllers\OrderController;
 
+
 Route::get('/',[ProductController::class,'index'])->name('home');
 Route::get('/products/{product:slug}',[ProductController::class,'show'])->name('products.show');
 
@@ -31,3 +32,18 @@ Route::middleware('guest')->group(function()
     Route::post('/login',[AuthController::class,'login']);
 });
 Route::middleware('auth')->post('/logout',[AuthController::class,'logout'])->name('logout');
+
+use App\Http\Controllers\Admin\AdminController;
+use App\Http\Controllers\Admin\AdminProductController;
+use App\Http\Controllers\Admin\AdminCategoryController;
+use App\Http\Controllers\Admin\AdminOrderController;
+
+Route::prefix('admin')->middleware(['auth','admin'])->name('admin.')->group(function()
+{
+    Route::get('/', [AdminController::class, 'dashboard'])->name('dashboard');
+    Route::resource('/products',AdminProductController::class);
+    Route::resource('/categories',AdminCategoryController::class)->except(['show']);
+    Route::get('/orders',[AdminOrderController::class,'index'])->name('orders.index');
+    Route::get('/orders/{order}',[AdminOrderController::class,'show'])->name('orders.show');
+    Route::patch('/orders/{order}/status',[AdminOrderController::class,'updateStatus'])->name('orders.updateStatus');
+});

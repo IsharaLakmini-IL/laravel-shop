@@ -1,6 +1,6 @@
 Description
 
-                    A full-stack e-commerce web application where customers can browse products,filter by category, add items to a shopping cart, and place orders                     with a shipping address. An admin panel allows the store owner to manage products,categories, and orders from a dedicated dashboard.Built                          as an undergraduate individual project using the Laravel MVC framework.
+A full-stack e-commerce web application where customers can browse products,filter by category, add items to a shopping cart, and place orders with a shipping address. An admin panel allows the store owner to manage products,categories, and orders from a dedicated dashboard.Built as an undergraduate individual project using the Laravel MVC framework.
 
 Technologies
 
